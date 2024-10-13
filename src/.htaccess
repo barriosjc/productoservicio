@@ -1,0 +1,11 @@
+# .htaccess
+RewriteEngine On
+
+# Permitir el acceso a los archivos CSS y JS
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/resources/css/
+RewriteCond %{REQUEST_URI} !^/resources/js/
+
+# Redirigir todo lo demás a index.php
+RewriteRule ^(.*)$ index.php [QSA,L]

@@ -1,0 +1,16 @@
+{
+    "name": "juan/sdn",
+    "description": "challenge",
+    "autoload": {
+        "psr-4": {
+            "Juan\\Sdn\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "barriosjc",
+            "email": "juan.barrios@reserv.com.ar"
+        }
+    ],
+    "require": {}
+}
