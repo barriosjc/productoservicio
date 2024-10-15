@@ -21,9 +21,9 @@ class ProductoServicioValidator
     /**
      * Valida los datos de un producto o servicio según las reglas definidas.
      *
-     * @param array $data Datos del producto o servicio a validar.
-     * @param ProductoServicio $productoServicio Instancia del modelo ProductoServicio para realizar consultas.
-     * @return array Arreglo de errores si existen validaciones que no se cumplen.
+     * @param array            $data Datos del producto o servicio a validar.
+     * @param                  ProductoServicio $productoServicio Instancia del modelo ProductoServicio para realizar consultas.
+     * @return array           Arreglo de errores de validaciones que no se cumplen.
      */
     public function validate($data, $productoServicio)
     {

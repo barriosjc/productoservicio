@@ -11,15 +11,10 @@ use src\Core\Database;
 use src\Interfaces\EntidadesInterface;
 
 /**
- * Modelo para gestionar los rubros.
+ * Modelo para gestionar los maestros de rubros.
  */
 class Rubro implements EntidadesInterface
 {
-    /**
-     * Conexión a la base de datos.
-     * 
-     * @var PDO
-     */
     private $db;
 
     /**

@@ -11,15 +11,10 @@ use src\Core\Database;
 use src\Interfaces\EntidadesInterface;
 
 /**
- * Modelo para gestionar las Condiciones de IVA.
+ * Modelo para gestionar los maestros de Condiciones de IVA.
  */
 class CondicionIva implements EntidadesInterface
 {
-    /**
-     * Conexión a la base de datos.
-     * 
-     * @var PDO
-     */
     private $db;
 
     /**
