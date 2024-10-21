@@ -6,16 +6,16 @@ require_once __DIR__ . '/../Models/ProductoServicio.php';
 require_once __DIR__ . '/../Services/ProductoServicioValidator.php';
 require_once __DIR__ . '/../Controllers/ProductoServicioController.php';
 require_once __DIR__ . "/../Services/ProductoServicioRepository.php";
-require_once __DIR__ . "/../Core/Database.php";
+require_once __DIR__ . "/DataBase.php";
 
-use src\Core\Database;
+use src\Core\DataBase;
 use src\Models\ProductoServicio;
 use src\Services\ProductoServicioValidator;
 use src\Controllers\ProductoServicioController;
 use src\Repositories\ProductoServicioRepository;
 
-$database = new Database();
-$dbConnection = $database->getConnection();
+$DataBase = new DataBase();
+$dbConnection = $DataBase->getConnection();
 $productoServicioRepository = new ProductoServicioRepository($dbConnection);
 $model = new ProductoServicio($productoServicioRepository);
 

@@ -162,7 +162,8 @@ class ProductoServicioRepository
             $stmt->bindParam(':id_rubro', $data['id_rubro']);
             $stmt->bindParam(':tipo', $data['tipo']);
             $stmt->bindParam(':id_unidad_medida', $data['id_unidad_medida']);
-            $stmt->bindParam(':codigo', strtoupper($data['codigo']));
+            $codigo = strtoupper($data['codigo']);
+            $stmt->bindParam(':codigo', $codigo);
             $stmt->bindParam(':producto_servicio', $data['producto_servicio']);
             $stmt->bindParam(':id_condicion_iva', $data['id_condicion_iva']);
             $stmt->bindParam(':precio_bruto_unitario', $data['precio_bruto_unitario']);

@@ -7,10 +7,10 @@ use PDOException;
 
 class Database
 {
-    private $host = 'localhost';
-    private $db   = 'sdn';
-    private $user = 'postgres';  
-    private $pass = 'postgres';
+    private $host;
+    private $db;
+    private $user;
+    private $pass;
     private $charset = 'utf8';
     private $port = '5432';
     private $pdo;
@@ -18,7 +18,12 @@ class Database
 
     public function __construct()
     {
-           $dsn = "pgsql:host=$this->host;port=$this->port;dbname=$this->db;options='--client_encoding=$this->charset'";
+        $this->host = getenv('DB_HOST') ?: 'localhost';
+        $this->db   = getenv('DB_NAME') ?: 'sdn';
+        $this->user = getenv('DB_USER') ?: 'postgres';
+        $this->pass = getenv('DB_PASS') ?: 'postgres';
+
+        $dsn = "pgsql:host=$this->host;port=$this->port;dbname=$this->db;options='--client_encoding=$this->charset'";
         
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,

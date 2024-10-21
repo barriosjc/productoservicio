@@ -1,7 +1,11 @@
 <?php
 
-require __DIR__ . '/Core/bootstrap.php'; // Cargamos las dependencias desde bootstrap.php
-require __DIR__ . '/Views/main.php';
+require __DIR__ . '/src/Core/bootstrap.php'; // Cargamos las dependencias desde bootstrap.php
+require __DIR__ . '/src/Views/main.php';
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $view = '';  

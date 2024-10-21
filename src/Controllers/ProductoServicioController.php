@@ -55,14 +55,14 @@ class ProductoServicioController
             $data['inputs'] = $this->sanitizeInputs($_POST);
             $errors = $this->validator->validate($data['inputs'], $this->model);
 
-            if (!empty($errors)) {
+            if (empty($errors)) {
+                $this->model->create($data['inputs']);
+                $this->redirect('/productoservicio');
+            } else {
                 foreach ($errors as $error) {
                     echo $error . "<br>";
                 }
                 $data['producto'] = $data['inputs'];
-            } else {
-                $this->model->create($data['inputs']);
-                $this->redirect('/productoservicio');
             }
         }
 
@@ -78,22 +78,22 @@ class ProductoServicioController
     {
         $data = $this->getFormData($id);
         $data['titulo'] = "Modificar";
-
+    
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data['inputs'] = $this->sanitizeInputs($_POST);
             $errors = $this->validator->validate($data['inputs'], $this->model);
-
-            if (!empty($errors)) {
+    
+            if (empty($errors)) {
+                $this->model->update($id, $data['inputs']);
+                $this->redirect('/productoservicio');
+            } else {
                 foreach ($errors as $error) {
                     echo $error . "<br>";
                 }
                 $data['producto'] = $data['inputs'];
-            } else {
-                $this->model->update($id, $data['inputs']);
-                $this->redirect('/productoservicio');
             }
         }
-
+    
         $this->render('producto_servicio/create', $data);
     }
 
@@ -113,6 +113,7 @@ class ProductoServicioController
      */
     public function listados()
     {
+        $listado =[];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = $this->sanitizeInputs($_POST);
 
@@ -123,7 +124,7 @@ class ProductoServicioController
                 $this->redirect('/listados');
             }
         } else {
-            $this->render('producto_servicio/listados');
+            $this->render('producto_servicio/listados', ['listado' => $listado, 'tipo' => '']);
         }
     }
 
@@ -173,7 +174,7 @@ class ProductoServicioController
      */
     private function redirect($url)
     {
-        header('Location: ' . $url);
+        echo "<script>window.location.href='$url';</script>";
         exit;
     }
 }

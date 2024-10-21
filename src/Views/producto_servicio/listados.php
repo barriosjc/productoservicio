@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listados</title>
-</head>
-
-<body>
     <div class="container mt-5">
-        <h1 class="mb-4"> Listados</h1>
+        <div class="row">
+        <div class="col-md-10">
+            <h1 class="mb-4"> Listados</h1>
+        </div>
+        <div class="col-md-2">
+            <a class="btn btn-info mb-3" href="/productoservicio">Volver</a>
+        </div>
+    </div>
         <form method="POST">
             <div class="row">
                 <div class="col-md-6">
@@ -46,6 +44,3 @@
             </tbody>
         </table>
     </div>
-</body>
-
-</html>

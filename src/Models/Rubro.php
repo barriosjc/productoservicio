@@ -7,7 +7,7 @@ require_once __DIR__ . '/../Core/DataBase.php';
 
 use PDO;
 use PDOException;
-use src\Core\Database;
+use src\Core\DataBase;
 use src\Interfaces\EntidadesInterface;
 
 /**
@@ -23,8 +23,8 @@ class Rubro implements EntidadesInterface
      */
     public function __construct()
     {
-        $database = new Database();
-        $this->db = $database->getConnection();
+        $DataBase = new DataBase();
+        $this->db = $DataBase->getConnection();
     }
 
     /**
