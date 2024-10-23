@@ -17,6 +17,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80"
+
+    environment:
+      DB_HOST: db 
+      DB_USER: postgres
+      DB_PASS: postgres
+      DB_NAME: sdn
+      
     depends_on:
       - db
 
