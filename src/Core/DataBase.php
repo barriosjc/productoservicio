@@ -18,7 +18,7 @@ class Database
 
     public function __construct()
     {
-        $this->host = getenv('DB_HOST') ?: 'localhost';
+        $this->host = getenv('DB_HOST') ?: 'db';
         $this->db   = getenv('DB_NAME') ?: 'sdn';
         $this->user = getenv('DB_USER') ?: 'postgres';
         $this->pass = getenv('DB_PASS') ?: 'postgres';

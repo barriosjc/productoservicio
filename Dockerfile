@@ -28,6 +28,7 @@ RUN echo "<VirtualHost *:80> \n\
 </VirtualHost>" > /etc/apache2/sites-available/000-default.conf
 
 RUN echo "display_errors = On" >> /usr/local/etc/php/conf.d/docker-php-errors.ini
+COPY /db_backup/pgbackup.sql /shared_data/backup.sql
 
 # VOLUME ["/var/www/html/sdn"]
 

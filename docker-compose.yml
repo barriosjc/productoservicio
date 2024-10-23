@@ -1,32 +1,24 @@
-version: '3.8'
-
 services:
-  app:
-    container_name: web-sdn
-    image: barriosjc747/doc-sdn
-    build:
-      context: . # indica el directorio donde se encuentra el Dockerfile, en el raiz del proyecto
-      dockerfile: Dockerfile
-    ports:
-      - "8080:80" # Mapea el puerto 80 del contenedor al puerto 8080 de la máquina host
-
-    environment:
-      DB_HOST: db # Nombre del servicio de la base de datos
-      DB_USER: postgres
-      DB_PASS: postgres
-      DB_NAME: sdn
-
   db:
-    container_name: web-sdn-db
-    image: postgres:latest # Usa la imagen oficial de PostgreSQL
+    image: postgres:latest
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_DB: sdn
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
-      - postgres_data:/var/lib/postgresql/data # Persistencia de datos
-      - ./db_backup:/docker-entrypoint-initdb.d/ # Copia el archivo de backup dentro del contenedor
+      - postgres_data:/var/lib/postgresql/data
+      - ./db_backup:/docker-entrypoint-initdb.d
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
 
 volumes:
-  postgres_data: # Definición del volumen para PostgreSQL
+  postgres_data: 
