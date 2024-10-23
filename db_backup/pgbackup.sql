@@ -175,16 +175,16 @@ INSERT INTO public.condicion_iva (id_condicion_iva, codigo, condicion_iva, alicu
 VALUES (2, 10205, 'exento', 0);
 
 INSERT INTO public.producto_servicio (id_producto_servicio, id_rubro, tipo, id_unidad_medida, codigo, producto_servicio, id_condicion_iva, precio_bruto_unitario, created_at) 
-VALUES (1, 1, 'P', 1, '147', 'papel fino xe', 1, 258.43, '2023-10-11 02:14:39') ;
+VALUES (3, 1, 'P', 1, '147', 'papel fino xe', 1, 258.43, '2023-10-11 02:14:39') ;
 
 INSERT INTO public.producto_servicio (id_producto_servicio, id_rubro, tipo, id_unidad_medida, codigo, producto_servicio, id_condicion_iva, precio_bruto_unitario, created_at) 
-VALUES (1, 1, 'P', 1, 'A200', 'papel grueso xe', 1, 345.43, '2022-10-11 02:14:39') ;
+VALUES (4, 1, 'P', 1, 'A200', 'papel grueso xe', 1, 345.43, '2022-10-11 02:14:39') ;
 
 INSERT INTO public.producto_servicio (id_producto_servicio, id_rubro, tipo, id_unidad_medida, codigo, producto_servicio, id_condicion_iva, precio_bruto_unitario, created_at) 
-VALUES (1, 1, 'P', 1, 'A200', 'rollo alumnio 2 mm', 1, 2500, '2024-08-11 02:14:39') ;
+VALUES (6, 1, 'P', 1, 'A200', 'rollo alumnio 2 mm', 1, 2500, '2024-08-11 02:14:39') ;
 
 INSERT INTO public.producto_servicio (id_producto_servicio, id_rubro, tipo, id_unidad_medida, codigo, producto_servicio, id_condicion_iva, precio_bruto_unitario, created_at) 
-VALUES (1, 1, 'S', 1, '202', 'transcripciones', 1, 1000, '2024-10-11 02:14:39') ;
+VALUES (8, 1, 'S', 1, '202', 'transcripciones', 1, 1000, '2024-10-11 02:14:39') ;
 
 -- (Otros valores similares para las demás tablas...)
 
